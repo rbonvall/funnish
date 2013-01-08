@@ -3,7 +3,7 @@
 map () {
     f=$1
     shift
-    for x in "$@"
+    for x
     do
         echo "$($f "$x")"
     done
@@ -12,7 +12,7 @@ map () {
 filter () {
     f=$1
     shift
-    for x in "$@"
+    for x
     do
         if $f "$x"
         then
