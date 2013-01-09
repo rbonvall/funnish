@@ -3,7 +3,7 @@
 source $PWD/funni.sh
 
 to_lower () {
-    echo ${1,,}
+    echo "${1,,}"
 }
 
 add_one () {
