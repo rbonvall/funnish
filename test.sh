@@ -35,7 +35,7 @@ result=($(map say_one "${strings[@]}"))
 expect=(10 15 6 9 29 -1 58)
 result=($(map add_one "${numbers[@]}"))
 
-expect=()
+expect=(14 28 57)
 result=($(filter is_big "${numbers[@]}"))
 
 expect=(cat platypus)
