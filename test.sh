@@ -29,7 +29,7 @@ strings=(Dog cat MOUSE "Hello World" platypus)
 expect=(dog cat mouse "hello world" platypus)
 result=($(map to_lower "${strings[@]}"))
 
-expect=(1 1 1 1 1)
+expect=(one one one one one)
 result=($(map say_one "${strings[@]}"))
 
 expect=(10 15 6 9 29 -1 58)
