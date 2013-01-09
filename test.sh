@@ -26,23 +26,18 @@ is_lower () {
 numbers=(9 14 5 8 28 -2 57)
 strings=(Dog cat MOUSE "Hello World" platypus)
 
-# mapped arrays
-lowers=($(map to_lower "${strings[@]}"))
-ones=(  $(map say_one  "${strings[@]}"))
-one_up=($(map add_one  "${numbers[@]}"))
+expect=(dog cat mouse "hello world" platypus)
+result=($(map to_lower "${strings[@]}"))
 
-# filtered arrays
-big_ones=(  $(filter is_big   "${numbers[@]}"))
-lower_ones=($(filter is_lower "${strings[@]}"))
+expect=(1 1 1 1 1)
+result=($(map say_one "${strings[@]}"))
 
+expect=(10 15 6 9 29 -1 58)
+result=($(map add_one "${numbers[@]}"))
 
-echo numbers:    "${numbers[@]}"    "(${#numbers[@]}"    "elements)"
-echo strings:    "${strings[@]}"    "(${#strings[@]}"    "elements)"
-echo
-echo lowers:     "${lowers[@]}"     "(${#lowers[@]}"     "elements)"
-echo ones:       "${ones[@]}"       "(${#ones[@]}"       "elements)"
-echo one_up:     "${one_up[@]}"     "(${#one_up[@]}"     "elements)"
-echo
-echo big_ones:   "${big_ones[@]}"   "(${#big_ones[@]}"   "elements)"
-echo lower_ones: "${lower_ones[@]}" "(${#lower_ones[@]}" "elements)"
+expect=()
+result=($(filter is_big "${numbers[@]}"))
+
+expect=(cat platypus)
+result=($(filter is_lower "${strings[@]}"))
 
